@@ -1,5 +1,14 @@
 # Project-wide
 .DS_Store
+
+# Ignore the following .md files
+style-guide.md
+README.md
+README-template.md
+
+# Ignore folder named design
+design/
+
 # Logs
 logs
 *.log
