@@ -36,13 +36,16 @@
             <div class="card-holder-details d-flex justify-content-between">
               <p class="name">Jane Appleseed</p>
               <p class="expiry-date">00/00</p>
+              <!-- <p class="cvc">000</p> -->
+              <!-- <p class="testing">Test</p> -->
             </div>
             
           <!-- </div> -->
         </div>
         <div class="card-back p-2">
           <div>
-            <p class="cvc">000</p>
+            <p class="cvc">000</p> 
+            
           </div>  
         </div>
       </div>
@@ -61,10 +64,11 @@
             <input type="number" placeholder="MM" class="month"> 
             <input type="number" placeholder="YY" class="year"> 
           </fieldset>
-          <fieldset class="cvc-field">
+          <fieldset class="cvc-no-field">
             <legend>CVC</legend>
             <input type="number" placeholder="e.g. 123" class="cvc-field w-100"> 
-          </fieldset> 
+          </fieldset>
+        </fieldset>
         </fieldset>
         <fieldset class="d-flex w-75 mx-auto">
           <button type="submit" class="btn confirm-btn">Confirm</button>

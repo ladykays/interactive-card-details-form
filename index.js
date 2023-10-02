@@ -5,7 +5,7 @@ const cardNumberInput = document.querySelector(".cardNumber");
 const monthInput = document.querySelector(".month");
 const yearInput = document.querySelector(".year"); 
 const expiryDate = document.querySelector(".expiry-date");
-const cvcInput = document.querySelector(".cvc");
+const cvcInput = document.querySelector(".cvc-field");
 
 
 //Handler for cardHolderName field
@@ -17,7 +17,7 @@ cardHolderNameInput.addEventListener("input", () => {
 //Handler for CVC field
 cvcInput.addEventListener("input", () => {
   const cvc = cvcInput.value;
-  document.querySelector("p.cvc").textContent = cvc;
+  document.querySelector(".cvc").textContent = cvc;
   console.log(cvc);
 });
 
