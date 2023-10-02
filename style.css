@@ -120,9 +120,11 @@ input {
 .year {
   width: 42%;
 }
-.cvc-field,
 .exp-date-field {
-  width: 50%;
+  width: 60%;
+}
+.cvc-field{
+  width: 40%;
 }
 .btn {
   background-color: var(--very-dark-violet);
@@ -144,7 +146,7 @@ input {
 }
 
 /* Media Queries */
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 
 
 }
