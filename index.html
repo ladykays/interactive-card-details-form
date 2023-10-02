@@ -55,15 +55,15 @@
           <legend>Card Number</legend>
           <input type="number" placeholder="e.g. 1234 5678 9123 0000"> 
         </fieldset>
-        <fieldset class="d-flex w-75 mx-auto">
-          <fieldset>
+        <fieldset class="d-flex w-75 gap-3 mx-auto">
+          <fieldset class="exp-date-field">
             <legend>Exp. Date (MM/YY)</legend>
             <input type="number" placeholder="MM" class="month"> 
             <input type="number" placeholder="YY" class="year"> 
           </fieldset>
-          <fieldset>
+          <fieldset class="cvc-field">
             <legend>CVC</legend>
-            <input type="number" placeholder="e.g. 123"> 
+            <input type="number" placeholder="e.g. 123" maxlength="3" class="cvc-field w-100"> 
           </fieldset> 
         </fieldset>
         <fieldset class="d-flex w-75 mx-auto">

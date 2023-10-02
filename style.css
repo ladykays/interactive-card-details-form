@@ -38,7 +38,7 @@
 .card-front {
   background-image: url("./images/bg-card-front.png");
   background-repeat: no-repeat;
-  background-size:contain;
+  background-size:cover;
   position: absolute;
   top: 35vw;
   left: 5vw;
@@ -47,7 +47,7 @@
 .card-back {
   background: url("./images/bg-card-back.png");
   background-repeat: no-repeat;
-  background-size:contain;
+  background-size:cover;
   position: absolute;
   top: 10vw;
   left: 22vw;
@@ -61,7 +61,8 @@
 }
 .card-no {
   top: 20vw;
-  left: 3vw
+  left: 3vw;
+  /* white-space: nowrap; */
 }
 .name,
 .expiry-date {
@@ -72,9 +73,8 @@
 }
 
 .logo {
-  width: 19%;
+  width: 20%;
   margin-bottom: 2rem;
-  position: absolute;
   top: 5vw;
   left: 3vw;
 }
@@ -102,7 +102,7 @@
 }
 legend {
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--very-dark-violet);
 }
@@ -114,10 +114,15 @@ input {
   border: 1px solid var(--light-grayish-violet);
   border-radius: 0.4rem;
   margin-bottom: 1rem;
+  letter-spacing: 0;
 }
 .month,
 .year {
-  width: 30%;
+  width: 42%;
+}
+.cvc-field,
+.exp-date-field {
+  width: 50%;
 }
 .btn {
   background-color: var(--very-dark-violet);
@@ -136,4 +141,10 @@ input {
 }
 .attribution a { 
   color: hsl(228, 45%, 44%); 
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+
+
 }
