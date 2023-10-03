@@ -50,26 +50,27 @@
         </div>
       </div>
     </div>
-    <div class="form w-100">
-      <fieldset class="card-form" name="card-form">
+    <div class="form-container w-100">
+      <form class="card-form" name="card-form" aria-label="Form" novalidate>
         <fieldset class="d-flex flex-column w-75 mx-auto">
           <legend class="name-legend">Cardholder Name</legend>
-          <input type="text" placeholder="e.g. Jane Appleseed" class="cardHolderName"> 
+          <input type="text" maxlength="30" placeholder="e.g. Jane Appleseed" class="cardHolderName">
+          <span aria-hidden="true" class="name-error" aria-live="polite" >Error</span>
           <legend>Card Number</legend>
-          <input type="number" placeholder="e.g. 1234 5678 9123 0000" class="cardNumber"> 
+          <input type="number" min="16" max="16" placeholder="e.g. 1234 5678 9123 0000" class="cardNumber"> 
         </fieldset>
         <fieldset class="d-flex w-75 gap-3 mx-auto">
           <fieldset class="exp-date-field">
             <legend>Exp. Date (MM/YY)</legend>
-            <input type="number" placeholder="MM" class="month"> 
-            <input type="number" placeholder="YY" class="year"> 
+            <input type="number" min="2" max="2" placeholder="MM" class="month"> 
+            <input type="number" min="2" max="2" placeholder="YY" class="year"> 
           </fieldset>
           <fieldset class="cvc-no-field">
             <legend>CVC</legend>
-            <input type="number" placeholder="e.g. 123" class="cvc-field w-100"> 
+            <input type="number" min="3" max="3" placeholder="e.g. 123" class="cvc-field w-100"> 
           </fieldset>
         </fieldset>
-        </fieldset>
+        </form>
         <fieldset class="d-flex w-75 mx-auto">
           <button type="submit" class="btn confirm-btn">Confirm</button>
         </fieldset>

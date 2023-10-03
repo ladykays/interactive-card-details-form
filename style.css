@@ -95,7 +95,7 @@
   left: 50vw;
   color: var(--white);
 }
-.form {
+.form-container {
   position: relative;
   z-index: 3;
   top:80vw;
@@ -125,6 +125,12 @@ input {
 }
 .cvc-no-field{
   width: 40%;
+}
+
+.error {
+  color: red;
+  display: none;
+  margin-top: 1rem;
 }
 .btn {
   background-color: var(--very-dark-violet);
