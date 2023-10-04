@@ -127,10 +127,14 @@ input {
   width: 40%;
 }
 
-.error {
+.error-message {
   color: red;
   display: none;
-  margin-top: 1rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+.error {
+  display: block;
 }
 .btn {
   background-color: var(--very-dark-violet);

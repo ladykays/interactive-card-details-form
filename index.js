@@ -1,16 +1,19 @@
+let formValid = true;
+
 const cardHolderNameInput = document.querySelector(".cardHolderName");
 const cardNumberInput = document.querySelector(".cardNumber");
 const monthInput = document.querySelector(".month");
 const yearInput = document.querySelector(".year"); 
 const expiryDate = document.querySelector(".expiry-date");
 const cvcInput = document.querySelector(".cvc-field");
-const nameError = document.querySelector("error");
+const nameError = document.querySelector(".name-error");
+const nameField = document.querySelector(".name-field")
 
 //Event Handlers
 //Handler for cardHolderName field
 cardHolderNameInput.addEventListener("input", () => {
   const cardHolderName = cardHolderNameInput.value; 
-  checkName();
+  checkName(cardHolderName);
   document.querySelector(".name").textContent = cardHolderName;
 });
 
@@ -42,11 +45,27 @@ cvcInput.addEventListener("input", () => {
 
 
 //Validate Form
-function checkName() {
- if (cardHolderNameInput.value === "") {
+function checkName(cardHolderName) {
+ if (cardHolderName === "r") {
   console.log("Please enter a name");
-  /* nameError.innerHTML = "Please enter a name"; */
+  nameError.textContent = "Please enter a name"; 
+  nameError.setAttribute("aria-hidden", false) ;
+  nameError.classList.add("error");
+  formValid = false;
+ } else {
+  //clear error if name is valid
+  nameError.textContent = "Error";
+  nameError.setAttribute("aria-hidden", true);
+  nameError.classList.remove("error");
  }
+}
+
+function submitForm(e) {
+  e.preventDefault();
+
+  formValid = true;
+
+  checkName(cardHolderNameInput.value);
 }
 
 function checkCardNumber() {

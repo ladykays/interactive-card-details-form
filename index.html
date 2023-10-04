@@ -52,10 +52,12 @@
     </div>
     <div class="form-container w-100">
       <form class="card-form" name="card-form" aria-label="Form" novalidate>
-        <fieldset class="d-flex flex-column w-75 mx-auto">
+        <fieldset class="name-field d-flex flex-column w-75 mx-auto">
           <legend class="name-legend">Cardholder Name</legend>
           <input type="text" maxlength="30" placeholder="e.g. Jane Appleseed" class="cardHolderName">
-          <span aria-hidden="true" class="name-error" aria-live="polite" >Error</span>
+          <span aria-hidden="true" class="error-message name-error" aria-live="polite">Error</span>
+        </fieldset>
+        <fieldset class="number-field d-flex flex-column w-75 mx-auto">
           <legend>Card Number</legend>
           <input type="number" min="16" max="16" placeholder="e.g. 1234 5678 9123 0000" class="cardNumber"> 
         </fieldset>
