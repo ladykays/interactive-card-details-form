@@ -13,6 +13,7 @@ const nameField = document.querySelector(".name-field");
 const confirmBtn = document.querySelector(".confirm-btn");
 
 //Event Handlers
+//---------------------------
 
 //Handler for confirm button
 confirmBtn.addEventListener("click", submitForm);
@@ -52,19 +53,46 @@ cvcInput.addEventListener("input", () => {
 
 
 //Validate Form
+//----------------------------
+
 function checkName(cardHolderName) {
- if (cardHolderName === "") {
-  console.log("Please enter a name");
-  nameError.textContent = "Please enter a name"; 
-  nameError.setAttribute("aria-hidden", false) ;
-  nameError.classList.add("error");
-  formValid = false;
- } else {
-  //clear error if name is valid
-  nameError.textContent = "Error";
-  nameError.setAttribute("aria-hidden", true);
-  nameError.classList.remove("error");
- }
+  let specialXcter = /[`!@£#$%^&*(){}".,?;:|"\\<>«~+=-_]/;
+  //Check for an empty name field
+  if (cardHolderName === "") {
+    console.log("Please enter a name");
+    nameError.textContent = "Please enter a name"; 
+    nameError.setAttribute("aria-hidden", false) ;
+    nameError.classList.add("error");
+    formValid = false;
+  } 
+  //Check for numbers(0-9) using the regular expression(regex) `/\d/` 
+  else if (/\d/.test(cardHolderName)) {
+    console.log("Name cannot contain numbers");
+    nameError.textContent = "Name cannot contain numbers";
+    nameError.setAttribute("aria-hidden", false);
+    nameError.classList.add("error");
+    formValid = false;
+  }
+  //Check for special characters
+  else if(specialXcter.test(cardHolderName)){
+    console.log("Name cannot contain special characters");
+    nameError.textContent = "Name cannot contain special characters";
+    nameError.setAttribute("aria-hidden", false);
+    nameError.classList.add("error");
+    formValid = false;
+  }
+  else {
+    //clear error if name is valid
+    nameError.textContent = "Error";
+    nameError.setAttribute("aria-hidden", true);
+    nameError.classList.remove("error");
+  }   
+}
+
+function checkCardNumber() {
+  if (cardNumberInput.value === "") {
+    console.log("Please enter a number");
+  }
 }
 
 function submitForm(e) {
@@ -82,11 +110,7 @@ function submitForm(e) {
 }
 
 
-function checkCardNumber() {
-  if (cardNumberInput.value === "") {
-    console.log("Please enter a number");
-  }
-}
+
 
 function checkExpiryDate() {
   if (expiryDateInput.value === "") {
