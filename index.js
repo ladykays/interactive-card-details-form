@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
 let formValid = true;
 
+const date = new Date();
+
+let currentMonth = date.getMonth() + 1; //add 1 to get the correct month because of 0 indexing
+let currentYear = date.getFullYear();
+console.log(currentMonth + " " + currentYear);
+
 const cardHolderNameInput = document.querySelector(".cardHolderName");
 const cardNumberInput = document.querySelector(".cardNumber");
 const monthInput = document.querySelector(".month");
@@ -9,6 +15,7 @@ const expiryDate = document.querySelector(".expiry-date");
 const cvcInput = document.querySelector(".cvc-field");
 const nameError = document.querySelector(".name-error");
 const cardNumberError = document.querySelector(".card-no-error");
+const dateError = document.querySelector(".date-error");
 //const nameField = document.querySelector(".name-field");
 //const form = document.querySelector("form");
 const confirmBtn = document.querySelector(".confirm-btn");
@@ -92,7 +99,6 @@ function checkName(cardHolderName) {
 }
 
 function checkCardNumber(cardNumber) {
-  let maxNumber
   if (cardNumber === "") {
     console.log("Please enter your card number");
     cardNumberError.textContent = "Please enter your card number";
@@ -114,8 +120,16 @@ function checkCardNumber(cardNumber) {
 }
 
 function checkExpiryDate() {
-  if (expiryDateInput.value === "") {
-
+  if ((monthInput.value > 12) || (yearInput.value  > (currentYear + 4)) || (yearInput.value < (currentYear))) {
+    console.log("Invalid date. Please enter a valid date.");
+    dateError.textContent = "Please enter a valid date.";
+    dateError.setAttribute("aria-hidden", true);
+    dateError.classList.add("error");
+  } else {
+    console.log("Valid date");
+    dateError.textContent = "Error";
+    dateError.setAttribute("aria-hidden", false);
+    dateError.classList.remove("error");
   }
 }
 
@@ -126,6 +140,7 @@ function submitForm(e) {
 
   checkName(cardHolderNameInput.value);
   checkCardNumber(cardNumberInput.value);
+  checkExpiryDate(expiryDate);
 
   if (formValid) {
     console.log("Valid");

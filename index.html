@@ -59,18 +59,19 @@
         </fieldset>
         <fieldset class="number-field d-flex flex-column w-75 mx-auto">
           <legend>Card Number</legend>
-          <input type="number" min="16" max="16" placeholder="e.g. 1234 5678 9123 0000" class="cardNumber"> 
+          <input type="text" minlength="16" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" class="cardNumber"> 
           <span aria-hidden="true" class="error-message card-no-error" aria-live="polite">Error</span>
         </fieldset>
         <fieldset class="d-flex w-75 gap-3 mx-auto">
           <fieldset class="exp-date-field">
             <legend>Exp. Date (MM/YY)</legend>
-            <input type="number" min="2" max="2" placeholder="MM" class="month"> 
-            <input type="number" min="2" max="2" placeholder="YY" class="year"> 
+            <input type="text" minlength="2" maxlength="2" placeholder="MM" class="month"> 
+            <input type="text" minlength="2" maxlength="2" placeholder="YY" class="year"> 
+            <span aria-hidden="true" class="error-message date-error" aria-live="polite">Error</span>
           </fieldset>
           <fieldset class="cvc-no-field">
             <legend>CVC</legend>
-            <input type="number" min="3" max="3" placeholder="e.g. 123" class="cvc-field w-100"> 
+            <input type="text" minlength="3" maxlength="3" placeholder="e.g. 123" class="cvc-field w-100"> 
           </fieldset>
         </fieldset>
 
