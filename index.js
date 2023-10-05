@@ -120,12 +120,19 @@ function checkCardNumber(cardNumber) {
 }
 
 function checkExpiryDate() {
-  if ((monthInput.value > 12) || (yearInput.value  > (currentYear + 4)) || (yearInput.value < (currentYear))) {
+  if ((monthInput.value > 12) || (yearInput.value  > (currentYear + 4))) {
     console.log("Invalid date. Please enter a valid date.");
     dateError.textContent = "Please enter a valid date.";
     dateError.setAttribute("aria-hidden", true);
     dateError.classList.add("error");
-  } else {
+  } 
+  else if (yearInput.value  < currentYear) {
+    console.log("Invalid date. Please enter a valid date.");
+    dateError.textContent = `Year cannot be before ${currentYear}`;
+    dateError.setAttribute("aria-hidden", true);
+    dateError.classList.add("error");
+  }
+  else {
     console.log("Valid date");
     dateError.textContent = "Error";
     dateError.setAttribute("aria-hidden", false);
