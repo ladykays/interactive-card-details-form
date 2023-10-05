@@ -37,7 +37,7 @@ cardHolderNameInput.addEventListener("input", () => {
 });
 //Allow only letters in the name input field
 cardHolderNameInput.addEventListener("keydown", (e) => {
-  if (!isNaN(e.key) && e.key !== "Backspace") {
+  if (!/[A-Za-z\s]/.test(e.key) && e.key !== "Backspace") {
     e.preventDefault();
   }
 });
@@ -120,13 +120,13 @@ function checkName(cardHolderName) {
     formValid = false;
   }
   //Check for special characters
-  else if(specialXcters.test(cardHolderName)){
+  /* else if(specialXcters.test(cardHolderName)){
     console.log("Name cannot contain special characters");
     nameError.textContent = "Name cannot contain special characters";
     nameError.setAttribute("aria-hidden", false);
     nameError.classList.add("error");
     formValid = false;
-  }
+  } */
   else {
     //clear error if name is valid
     nameError.textContent = "Error";
@@ -163,8 +163,8 @@ function checkCardNumber(cardNumber) {
 }
 
 function checkExpiryDate() {
-  //Convert currentYear to string format then get the last two digits and store the value in a variable `currentYearLast2Digits`
-  const currentYearLast2Digits = String(currentYear).slice(-2); 
+  //Convert currentYear to string format then get the last two digits then convert it back to number using `parseInt` and store the value in a variable `currentYearLast2Digits`
+  let currentYearLast2Digits = parseInt(String(currentYear).slice(-2)); 
   console.log(currentYearLast2Digits);
 
   if ((monthInput.value === "") || (yearInput.value  === "")) {
