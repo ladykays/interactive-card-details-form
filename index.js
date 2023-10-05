@@ -8,7 +8,8 @@ const yearInput = document.querySelector(".year");
 const expiryDate = document.querySelector(".expiry-date");
 const cvcInput = document.querySelector(".cvc-field");
 const nameError = document.querySelector(".name-error");
-const nameField = document.querySelector(".name-field");
+const cardNumberError = document.querySelector(".card-no-error");
+//const nameField = document.querySelector(".name-field");
 //const form = document.querySelector("form");
 const confirmBtn = document.querySelector(".confirm-btn");
 
@@ -28,6 +29,7 @@ cardHolderNameInput.addEventListener("input", () => {
 //Handler for cardNumber field
 cardNumberInput.addEventListener("input", () => {
   let cardNumber = cardNumberInput.value;
+  
   //add space after every 4 digits
   cardNumber = cardNumber.substring(0, 4) + " " + cardNumber.substring(4, 8) + " " + cardNumber.substring(8, 12) + " " + cardNumber.substring(12, 16);
   document.querySelector(".card-no").textContent = cardNumber;
@@ -89,9 +91,31 @@ function checkName(cardHolderName) {
   }   
 }
 
-function checkCardNumber() {
-  if (cardNumberInput.value === "") {
-    console.log("Please enter a number");
+function checkCardNumber(cardNumber) {
+  let maxNumber
+  if (cardNumber === "") {
+    console.log("Please enter your card number");
+    cardNumberError.textContent = "Please enter your card number";
+    cardNumberError.setAttribute("aria-hidden", true);
+    cardNumberError.classList.add("error");
+  } 
+  //Check is card number is 16 characters long
+  else if (cardNumber.length !== 16) {
+    console.log("Card number must be a 16 digit number");
+    cardNumberError.textContent = "Card number must be a 16 digit number";
+    cardNumberError.setAttribute("aria-hidden", true);
+    cardNumberError.classList.add("error");
+  }
+  else {
+    cardNumberError.textContent = "Error";
+    cardNumberError.setAttribute("aria-hidden", false);
+    cardNumberError.classList.remove("error");
+  }
+}
+
+function checkExpiryDate() {
+  if (expiryDateInput.value === "") {
+
   }
 }
 
@@ -101,6 +125,7 @@ function submitForm(e) {
   formValid = true;
 
   checkName(cardHolderNameInput.value);
+  checkCardNumber(cardNumberInput.value);
 
   if (formValid) {
     console.log("Valid");
@@ -109,12 +134,4 @@ function submitForm(e) {
   }
 }
 
-
-
-
-function checkExpiryDate() {
-  if (expiryDateInput.value === "") {
-
-  }
-}
 });
