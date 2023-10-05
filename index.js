@@ -7,6 +7,8 @@ let currentMonth = date.getMonth() + 1; //add 1 to get the correct month because
 let currentYear = date.getFullYear();
 console.log(currentMonth + " " + currentYear);
 
+const nonNumbers = /[a-zA-Z`!@£#$%^&*(){}".,?;:|"\\<>«~+=-_]/
+
 const cardHolderNameInput = document.querySelector(".cardHolderName");
 const cardNumberInput = document.querySelector(".cardNumber");
 const monthInput = document.querySelector(".month");
@@ -16,6 +18,7 @@ const cvcInput = document.querySelector(".cvc-field");
 const nameError = document.querySelector(".name-error");
 const cardNumberError = document.querySelector(".card-no-error");
 const dateError = document.querySelector(".date-error");
+const cvcError = document.querySelector(".cvc-error");
 //const nameField = document.querySelector(".name-field");
 //const form = document.querySelector("form");
 const confirmBtn = document.querySelector(".confirm-btn");
@@ -32,6 +35,12 @@ cardHolderNameInput.addEventListener("input", () => {
   checkName(cardHolderName);
   document.querySelector(".name").textContent = cardHolderName;
 });
+//Allow only letters in the name input field
+cardHolderNameInput.addEventListener("keydown", (e) => {
+  if (!isNaN(e.key) && e.key !== "Backspace") {
+    e.preventDefault();
+  }
+});
 
 //Handler for cardNumber field
 cardNumberInput.addEventListener("input", () => {
@@ -42,10 +51,31 @@ cardNumberInput.addEventListener("input", () => {
   document.querySelector(".card-no").textContent = cardNumber;
 });
 
+//Allow only numbers in the card number input field
+cardNumberInput.addEventListener("keydown", (e) => {
+  if (isNaN(e.key) && e.key !== "Backspace") {
+    e.preventDefault();
+  }
+});
+
 //Handler for expiry date field
 monthInput.addEventListener("input", expiryDateInput);
 
 yearInput.addEventListener("input", expiryDateInput);
+
+//Allow only numbers in the month input field
+monthInput.addEventListener("keydown", (e) => {
+  if (isNaN(e.key) && e.key !== "Backspace") {
+    e.preventDefault();
+  }
+});
+
+//Allow only numbers in the year input field
+yearInput.addEventListener("keydown", (e) => {
+  if (isNaN(e.key) && e.key !== "Backspace") {
+    e.preventDefault();
+  }
+});
 
 function expiryDateInput() {
   const month = monthInput.value;
@@ -53,10 +83,17 @@ function expiryDateInput() {
   expiryDate.textContent = month + "/" + year;
 };
 
+
 //Handler for CVC field
 cvcInput.addEventListener("input", () => {
   const cvc = cvcInput.value;
   document.querySelector(".cvc").textContent = cvc;
+});
+//Allow only numbers in the cvc input field
+cvcInput.addEventListener("keydown", (e) => {
+  if (isNaN(e.key) && e.key !== "Backspace") {
+    e.preventDefault();
+  }
 });
 
 
@@ -65,7 +102,7 @@ cvcInput.addEventListener("input", () => {
 //----------------------------
 
 function checkName(cardHolderName) {
-  let specialXcter = /[`!@£#$%^&*(){}".,?;:|"\\<>«~+=-_]/;
+  let specialXcters = /[`!@£#$%^&*(){}".,?;:|"\\<>«~+=-_]/;
   //Check for an empty name field
   if (cardHolderName === "") {
     console.log("Please enter a name");
@@ -83,7 +120,7 @@ function checkName(cardHolderName) {
     formValid = false;
   }
   //Check for special characters
-  else if(specialXcter.test(cardHolderName)){
+  else if(specialXcters.test(cardHolderName)){
     console.log("Name cannot contain special characters");
     nameError.textContent = "Name cannot contain special characters";
     nameError.setAttribute("aria-hidden", false);
@@ -105,6 +142,12 @@ function checkCardNumber(cardNumber) {
     cardNumberError.setAttribute("aria-hidden", true);
     cardNumberError.classList.add("error");
   } 
+  else if (nonNumbers.test(cardNumber)) {
+    console.log("Must be a 16 digit number");
+    cardNumberError.textContent = "Must be a 16 digit number";
+    cardNumberError.setAttribute("aria-hidden", true);
+    cardNumberError.classList.add("error");
+  }
   //Check is card number is 16 characters long
   else if (cardNumber.length !== 16) {
     console.log("Card number must be a 16 digit number");
@@ -120,14 +163,30 @@ function checkCardNumber(cardNumber) {
 }
 
 function checkExpiryDate() {
-  if ((monthInput.value > 12) || (yearInput.value  > (currentYear + 4))) {
+  //Convert currentYear to string format then get the last two digits and store the value in a variable `currentYearLast2Digits`
+  const currentYearLast2Digits = String(currentYear).slice(-2); 
+  console.log(currentYearLast2Digits);
+
+  if ((monthInput.value === "") || (yearInput.value  === "")) {
+    console.log("Expiry date field cannot be empty");
+    dateError.textContent = "Expiry date field cannot be empty";
+    dateError.setAttribute("aria-hidden", true);
+    dateError.classList.add("error");
+  } 
+  else if ((monthInput.value === 0) || (yearInput.value  == 0)) {
+    console.log("Invalid date. Month and year cannot be 0");
+    dateError.textContent = "Month and year cannot be 0";
+    dateError.setAttribute("aria-hidden", true);
+    dateError.classList.add("error");
+  } 
+  else if ((monthInput.value > 12) || (yearInput.value  > (currentYearLast2Digits + 4))) {
     console.log("Invalid date. Please enter a valid date.");
     dateError.textContent = "Please enter a valid date.";
     dateError.setAttribute("aria-hidden", true);
     dateError.classList.add("error");
   } 
-  else if (yearInput.value  < currentYear) {
-    console.log("Invalid date. Please enter a valid date.");
+  else if (yearInput.value  < currentYearLast2Digits) {
+    console.log("Year cannot be before ${currentYear}");
     dateError.textContent = `Year cannot be before ${currentYear}`;
     dateError.setAttribute("aria-hidden", true);
     dateError.classList.add("error");
@@ -140,6 +199,26 @@ function checkExpiryDate() {
   }
 }
 
+function checkCVCNo(cvc) {
+  if (cvc === "") {
+    console.log("CVC field cannot be empty");
+    cvcError.textContent = "CVC field cannot be empty";
+    cvcError.setAttribute("aria-hidden", true);
+    cvcError.classList.add("error");
+  } 
+  else if (nonNumbers.test(cvc)) {
+    console.log("Must be a 3 digit number");
+    cvcError.textContent = "Must be a 3 digit number";
+    cvcError.setAttribute("aria-hidden", true);
+    cvcError.classList.add("error");
+  }
+  else {
+    cvcError.textContent = "Error";
+    cvcError.setAttribute("aria-hidden", false);
+    cvcError.classList.remove("error");
+  }
+}
+
 function submitForm(e) {
   e.preventDefault();
   
@@ -148,6 +227,7 @@ function submitForm(e) {
   checkName(cardHolderNameInput.value);
   checkCardNumber(cardNumberInput.value);
   checkExpiryDate(expiryDate);
+  checkCVCNo(cvcInput.value);
 
   if (formValid) {
     console.log("Valid");
