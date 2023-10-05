@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 let formValid = true;
 
 const cardHolderNameInput = document.querySelector(".cardHolderName");
@@ -7,9 +8,15 @@ const yearInput = document.querySelector(".year");
 const expiryDate = document.querySelector(".expiry-date");
 const cvcInput = document.querySelector(".cvc-field");
 const nameError = document.querySelector(".name-error");
-const nameField = document.querySelector(".name-field")
+const nameField = document.querySelector(".name-field");
+//const form = document.querySelector("form");
+const confirmBtn = document.querySelector(".confirm-btn");
 
 //Event Handlers
+
+//Handler for confirm button
+confirmBtn.addEventListener("click", submitForm);
+
 //Handler for cardHolderName field
 cardHolderNameInput.addEventListener("input", () => {
   const cardHolderName = cardHolderNameInput.value; 
@@ -46,7 +53,7 @@ cvcInput.addEventListener("input", () => {
 
 //Validate Form
 function checkName(cardHolderName) {
- if (cardHolderName === "r") {
+ if (cardHolderName === "") {
   console.log("Please enter a name");
   nameError.textContent = "Please enter a name"; 
   nameError.setAttribute("aria-hidden", false) ;
@@ -62,11 +69,18 @@ function checkName(cardHolderName) {
 
 function submitForm(e) {
   e.preventDefault();
-
+  
   formValid = true;
 
   checkName(cardHolderNameInput.value);
+
+  if (formValid) {
+    console.log("Valid");
+  } else {
+    console.log("Invalid");
+  }
 }
+
 
 function checkCardNumber() {
   if (cardNumberInput.value === "") {
@@ -79,3 +93,4 @@ function checkExpiryDate() {
 
   }
 }
+});
