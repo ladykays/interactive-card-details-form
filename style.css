@@ -154,13 +154,23 @@ input {
 .hidden {
   display: none;
 }
-
+footer {
+  color: var(--very-dark-violet);
+  position: relative;
+  top: 90vw;
+  
+}
 .attribution { 
   font-size: 11px; 
   text-align: center; 
 }
 .attribution a { 
-  color: hsl(228, 45%, 44%); 
+  color: var(--very-dark-violet); 
+  font-size: 11px;
+  text-decoration: none;
+}
+.attribution a:hover {
+  color: var(--light-grayish-violet);
 }
 
 /* Media Queries */
