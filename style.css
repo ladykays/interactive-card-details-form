@@ -13,6 +13,10 @@
   font-weight: 500;
   letter-spacing: 2px;
 }
+main {
+  height: 100vh;
+  flex-direction: column;
+}
 .purple-background {
   background: url("./images/bg-main-mobile.png");
   background-repeat: no-repeat;
@@ -32,15 +36,17 @@
 }
 .card-front, 
 .card-back {
+  position: absolute;
   height: 38vw; 
   width: 70vw; 
+  background-position: center;
 }
 .card-front {
   background-image: url("./images/bg-card-front.png");
   background-repeat: no-repeat;
   background-size:cover;
-  position: absolute;
-  top: 35vw;
+  /* position: absolute; */
+  top: 32vw;
   left: 5vw;
   z-index: 1; 
 }
@@ -48,7 +54,7 @@
   background: url("./images/bg-card-back.png");
   background-repeat: no-repeat;
   background-size:cover;
-  position: absolute;
+  /* position: absolute; */
   top: 10vw;
   left: 22vw;
   /* z-index: 0; */
@@ -86,7 +92,7 @@
 }
 .name {
   text-transform: uppercase;
-  position: absolute;
+  /* position: absolute; */
   left: 3vw;
 }
 .cvc {
@@ -99,6 +105,7 @@
   position: relative;
   z-index: 3;
   top:80vw;
+  width: 100%;
 }
 legend {
   text-transform: uppercase;
@@ -148,9 +155,7 @@ input {
   background: linear-gradient(hsl(304, 44%, 19%), hsl(278, 71%, 11%));
   color: var(--white);
 }
-.complete-state {
-  
-}
+
 .hidden {
   display: none;
 }
@@ -160,7 +165,7 @@ footer {
   top: 90vw;
   
 }
-.attribution { 
+.attribution p{ 
   font-size: 11px; 
   text-align: center; 
 }
@@ -174,7 +179,62 @@ footer {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 480px) {
-
-
+@media only screen and (min-width: 415px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content:space-between;
+  }
+  .purple-background {
+    background: url("./images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 100%;
+    margin-bottom: 0;
+  }
+  .cards {
+    max-width: none;
+    max-height: none;
+  }
+  .card-front,
+  .card-back {
+    height: 20vw;
+    background-size: contain;
+  }
+  .card-front {
+    top: 10vw;
+    left: -5vw
+  }
+  .card-back {
+    top: 35vw;
+    left: 18vw
+  }
+  .logo {
+    width: 10%;
+    left: 20vw;
+    top: 2vw;
+  }
+  .card-no {
+    top: 10vw;
+    left: 20vw;
+    width: 100%;
+  }
+  .name,
+  .expiry-date {
+    top: 16vw;
+  }
+  .name {
+    left: 20vw;
+  }
+  .expiry-date {
+    left: 47vw;
+  }
+  .cvc {
+    top: 3vw;
+    left: 30vw;
+  }
+  .form-container {
+    width: 50%;
+  }
 }
