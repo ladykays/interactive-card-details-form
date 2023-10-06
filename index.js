@@ -3,11 +3,9 @@ let formValid = true;
 
 const date = new Date();
 
-let currentMonth = date.getMonth() + 1; //add 1 to get the correct month because of 0 indexing
+//let currentMonth = date.getMonth() + 1; //add 1 to get the correct month because of 0 indexing
 let currentYear = date.getFullYear();
-console.log(currentMonth + " " + currentYear);
 
-const nonNumbers = /[a-zA-Z`!@£#$%^&*(){}".,?;:|"\\<>«~+=-_]/
 
 const cardHolderNameInput = document.querySelector(".cardHolderName");
 const cardNumberInput = document.querySelector(".cardNumber");
@@ -19,8 +17,6 @@ const nameError = document.querySelector(".name-error");
 const cardNumberError = document.querySelector(".card-no-error");
 const dateError = document.querySelector(".date-error");
 const cvcError = document.querySelector(".cvc-error");
-//const nameField = document.querySelector(".name-field");
-//const form = document.querySelector("form");
 const confirmBtn = document.querySelector(".confirm-btn");
 
 //Event Handlers
@@ -35,7 +31,8 @@ cardHolderNameInput.addEventListener("input", () => {
   checkName(cardHolderName);
   document.querySelector(".name").textContent = cardHolderName;
 });
-//Allow only letters in the name input field
+
+//Handler to allow only letters in the name input field
 cardHolderNameInput.addEventListener("keydown", (e) => {
   if (!/[A-Za-z\s]/.test(e.key) && e.key !== "Backspace") {
     e.preventDefault();
@@ -53,7 +50,7 @@ cardNumberInput.addEventListener("input", () => {
 
 //Allow only numbers in the card number input field
 cardNumberInput.addEventListener("keydown", (e) => {
-  if (isNaN(e.key) && e.key !== "Backspace") {
+  if (!/\d/.test(e.key) && e.key !== "Backspace") {
     e.preventDefault();
   }
 });
@@ -102,7 +99,7 @@ cvcInput.addEventListener("keydown", (e) => {
 //----------------------------
 
 function checkName(cardHolderName) {
-  let specialXcters = /[`!@£#$%^&*(){}".,?;:|"\\<>«~+=-_]/;
+  //let specialXcters = /[`!@£#$%^&*(){}".,?;:|"\\<>«~+=-_]/;
   //Check for an empty name field
   if (cardHolderName === "") {
     console.log("Please enter a name");
@@ -111,22 +108,6 @@ function checkName(cardHolderName) {
     nameError.classList.add("error");
     formValid = false;
   } 
-  //Check for numbers(0-9) using the regular expression(regex) `/\d/` 
-  else if (/\d/.test(cardHolderName)) {
-    console.log("Name cannot contain numbers");
-    nameError.textContent = "Name cannot contain numbers";
-    nameError.setAttribute("aria-hidden", false);
-    nameError.classList.add("error");
-    formValid = false;
-  }
-  //Check for special characters
-  /* else if(specialXcters.test(cardHolderName)){
-    console.log("Name cannot contain special characters");
-    nameError.textContent = "Name cannot contain special characters";
-    nameError.setAttribute("aria-hidden", false);
-    nameError.classList.add("error");
-    formValid = false;
-  } */
   else {
     //clear error if name is valid
     nameError.textContent = "Error";
@@ -142,12 +123,6 @@ function checkCardNumber(cardNumber) {
     cardNumberError.setAttribute("aria-hidden", true);
     cardNumberError.classList.add("error");
   } 
-  else if (nonNumbers.test(cardNumber)) {
-    console.log("Must be a 16 digit number");
-    cardNumberError.textContent = "Must be a 16 digit number";
-    cardNumberError.setAttribute("aria-hidden", true);
-    cardNumberError.classList.add("error");
-  }
   //Check is card number is 16 characters long
   else if (cardNumber.length !== 16) {
     console.log("Card number must be a 16 digit number");
@@ -206,12 +181,12 @@ function checkCVCNo(cvc) {
     cvcError.setAttribute("aria-hidden", true);
     cvcError.classList.add("error");
   } 
-  else if (nonNumbers.test(cvc)) {
+  else if (cvc.length !== 3) {
     console.log("Must be a 3 digit number");
     cvcError.textContent = "Must be a 3 digit number";
     cvcError.setAttribute("aria-hidden", true);
     cvcError.classList.add("error");
-  }
+  } 
   else {
     cvcError.textContent = "Error";
     cvcError.setAttribute("aria-hidden", false);

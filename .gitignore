@@ -1,5 +1,6 @@
 # Project-wide
 .DS_Store
+before-code-cleanup.js
 
 # Ignore the following .md files
 style-guide.md
