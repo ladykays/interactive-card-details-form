@@ -132,6 +132,7 @@ input {
   display: none;
   margin-top: -1rem;
   margin-bottom: 1rem;
+  font-size: .6rem;
 }
 .error {
   display: block;
@@ -147,6 +148,13 @@ input {
   background: linear-gradient(hsl(304, 44%, 19%), hsl(278, 71%, 11%));
   color: var(--white);
 }
+.complete-state {
+  
+}
+.hidden {
+  display: none;
+}
+
 .attribution { 
   font-size: 11px; 
   text-align: center; 
