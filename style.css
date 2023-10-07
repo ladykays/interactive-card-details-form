@@ -41,8 +41,8 @@ main {
   position: absolute;
   /* height: 38vw; 
   width: 70vw;  */
-  height: 9.5rem; 
-  width: 17.5rem;
+  height: 8rem; 
+  width: 14.736rem;;
   background-position: center;
 }
 .card-front {
@@ -52,7 +52,7 @@ main {
   /* position: absolute; 
   left: 3vw; 
   top: 26vw; */
-  top: 6.5rem;
+  top: 5.5rem;
   left: 0;
   z-index: 1; 
 }
@@ -61,8 +61,10 @@ main {
   background-repeat: no-repeat;
   background-size:cover;
   /* position: absolute; */
-  top: 5vw;
-  left: 19vw;
+  /* top: 5vw;
+  left: 19vw; */
+  top: 1rem;
+  right:0;
   z-index: 0; 
 }
 .logo,
@@ -76,17 +78,16 @@ main {
   margin-bottom: 2rem;
   top: 5vw;
   left: 3vw; */
-  height: 1.7rem; 
+  height: 1.5rem; 
   top: 1rem;
-  left: 1rem;
+  left: 0.8rem;
 }
 .card-no {
   /* top: 20vw;
   left: 3vw; */
   /* white-space: nowrap; */
-  top: 5rem;
-  left: 1rem;
-  letter-spacing: 4px;
+  top: 4.2rem;
+  left: 0.8rem;
 }
 .name,
 .expiry-date {
@@ -95,17 +96,17 @@ main {
 }
 .expiry-date {
   /* left: 53.5vw; */
-  right: 0.5rem;
+  right: 0;
 }
 .card-holder-details {
   position: relative;
   max-width: 90%;
-  top: 7.5rem;
-  left: 1rem;
+  top: 6.4rem;
+  left: 0.8rem;
 }
 .card-holder-details p, 
 .cvc {
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   font-weight: 300;
 }
 .name {
@@ -114,10 +115,12 @@ main {
   left: 3vw;*/
 }
 .cvc {
-  position: relative;
-  top: 16.5vw;
-  left: 50vw;
-  color: var(--white);
+  position: absolute;
+  /* top: 16.5vw;
+  left: 50vw; */
+  top: 3.6rem;
+  right: 2rem;
+  /* color: var(--white); */
 }
 .form-container {
   /* position: relative;
