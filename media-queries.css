@@ -1,4 +1,62 @@
+/* Media Queries */
 @media only screen and (min-width: 415px) {
-
-
+  main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content:space-between;
+  }
+  .purple-background {
+    background: url("./images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 100%;
+    margin-bottom: 0;
+    display: grid;
+    place-content: center;
+  }
+  .cards {
+    max-width: none;
+    max-height: none;
+  }
+  .card-front,
+  .card-back {
+    height: 20vw;
+    background-size: contain;
+  }
+  .card-front {
+    top: 10vw;
+    left: -5vw
+  }
+  .card-back {
+    top: 35vw;
+    left: 18vw
+  }
+  .logo {
+    width: 10%;
+    left: 20vw;
+    top: 2vw;
+  }
+  .card-no {
+    top: 10vw;
+    left: 20vw;
+    width: 100%;
+  }
+  .name,
+  .expiry-date {
+    top: 16vw;
+  }
+  .name {
+    left: 20vw;
+  }
+  .expiry-date {
+    left: 47vw;
+  }
+  .cvc {
+    top: 3vw;
+    left: 30vw;
+  }
+  .form-container {
+    width: 50%;
+  }
 }

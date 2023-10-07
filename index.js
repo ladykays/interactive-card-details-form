@@ -165,14 +165,20 @@ function checkExpiryDate() {
     dateError.classList.add("error");
     formValid = false;
   } 
-  else if ((monthInput.value === 0) || (yearInput.value  == 0)) {
-    dateError.textContent = "Month and year cannot be 0";
+  else if (monthInput.value === 0) {
+    dateError.textContent = "Month cannot be 0";
     dateError.setAttribute("aria-hidden", true);
     dateError.classList.add("error");
     formValid = false;
   } 
-  else if ((monthInput.value > 12) || (yearInput.value  > (currentYearLast2Digits + 4))) {
-    dateError.textContent = "Please enter a valid date.";
+  else if ((monthInput.value < 1) || (monthInput.value > 12)) {
+    dateError.textContent = "Please enter a valid month number.";
+    dateError.setAttribute("aria-hidden", true);
+    dateError.classList.add("error");
+    formValid = false;
+  } 
+  else if ((yearInput.value  > (currentYearLast2Digits + 4))) {
+    dateError.textContent = `Year cannot be more than 4 years from ${currentYear}.`;
     dateError.setAttribute("aria-hidden", true);
     dateError.classList.add("error");
     formValid = false;
@@ -182,6 +188,9 @@ function checkExpiryDate() {
     dateError.setAttribute("aria-hidden", true);
     dateError.classList.add("error");
     formValid = false;
+  }
+  else if ((monthInput.length !== 2) || (yearInput.length !== 2)) {
+    dateError.textContent = "Please enter expiry date in the format mm/yy. E.g. 03/26"
   }
   else {
     dateError.textContent = "Error";

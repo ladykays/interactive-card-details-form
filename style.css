@@ -14,7 +14,7 @@
   letter-spacing: 2px;
 }
 main {
-  height: 100vh;
+  min-height: 90vh;
   flex-direction: column;
 }
 .purple-background {
@@ -23,15 +23,17 @@ main {
   background-size: cover;
   width: 100%; 
   height: 62vw;
-  margin-bottom: 5rem;
-  position: absolute;
-  z-index: 2; 
+  padding: 1rem 1rem 1.5rem 1rem;
+  /* margin-bottom: 5rem; */
+  /* position: absolute;
+  z-index: 2;  */
 }
 .cards {
   max-width: 100%;
   height: 100%;
   position:relative;
   color: var(--white);
+  margin: 0 auto;
 /*   z-index: 1; */
 }
 .card-front, 
@@ -46,8 +48,8 @@ main {
   background-repeat: no-repeat;
   background-size:cover;
   /* position: absolute; */
-  top: 32vw;
-  left: 5vw;
+  top: 26vw;
+  /* left: 3vw; */
   z-index: 1; 
 }
 .card-back {
@@ -55,9 +57,9 @@ main {
   background-repeat: no-repeat;
   background-size:cover;
   /* position: absolute; */
-  top: 10vw;
-  left: 22vw;
-  /* z-index: 0; */
+  top: 5vw;
+  left: 19vw;
+  z-index: 0; 
 }
 .logo,
 .card-no,
@@ -79,7 +81,7 @@ main {
 }
 
 .logo {
-  width: 20%;
+  width: 20%; 
   margin-bottom: 2rem;
   top: 5vw;
   left: 3vw;
@@ -97,15 +99,19 @@ main {
 }
 .cvc {
   position: relative;
-  top: 15vw;
+  top: 16.5vw;
   left: 50vw;
   color: var(--white);
 }
 .form-container {
-  position: relative;
+  /* position: relative;
   z-index: 3;
-  top:80vw;
+  top:80vw; */
+  padding: 4rem 0 2rem 0;
   width: 100%;
+}
+fieldset {
+  margin-bottom: 1rem;
 }
 legend {
   text-transform: uppercase;
@@ -114,30 +120,34 @@ legend {
   color: var(--very-dark-violet);
 }
 input {
-  color: var(--light-grayish-violet);
+  color: var(--dark-grayish-violet);
   font-size: .8rem;
   width: 100%;
   padding: .7rem;
   border: 1px solid var(--light-grayish-violet);
   border-radius: 0.4rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   letter-spacing: 0;
+}
+::placeholder {
+  color: var(--light-grayish-violet);
 }
 .month,
 .year {
-  width: 42%;
+  width: 45%;
 }
 .exp-date-field {
-  width: 60%;
-}
+  width: 90%;
+} 
 .cvc-no-field{
-  width: 40%;
+  width: 70%;
 }
+
 
 .error-message {
   color: red;
   display: none;
-  margin-top: -1rem;
+  margin-top: 0;
   margin-bottom: 1rem;
   font-size: .6rem;
 }
@@ -157,84 +167,29 @@ input {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 footer {
   color: var(--very-dark-violet);
-  position: relative;
-  top: 90vw;
+  height: 5rem;
+  background-color: gray;
+  padding: 20px 0;
+  /*position: relative;
+  /* top: 90vw; */
   
 }
-.attribution p{ 
+.attribution { 
   font-size: 11px; 
   text-align: center; 
+  letter-spacing: 0;
 }
 .attribution a { 
   color: var(--very-dark-violet); 
   font-size: 11px;
   text-decoration: none;
+  letter-spacing: 0;
 }
 .attribution a:hover {
   color: var(--light-grayish-violet);
 }
 
-/* Media Queries */
-@media only screen and (min-width: 415px) {
-  main {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    justify-content:space-between;
-  }
-  .purple-background {
-    background: url("./images/bg-main-desktop.png");
-    background-repeat: no-repeat;
-    width: 40%;
-    height: 100%;
-    margin-bottom: 0;
-  }
-  .cards {
-    max-width: none;
-    max-height: none;
-  }
-  .card-front,
-  .card-back {
-    height: 20vw;
-    background-size: contain;
-  }
-  .card-front {
-    top: 10vw;
-    left: -5vw
-  }
-  .card-back {
-    top: 35vw;
-    left: 18vw
-  }
-  .logo {
-    width: 10%;
-    left: 20vw;
-    top: 2vw;
-  }
-  .card-no {
-    top: 10vw;
-    left: 20vw;
-    width: 100%;
-  }
-  .name,
-  .expiry-date {
-    top: 16vw;
-  }
-  .name {
-    left: 20vw;
-  }
-  .expiry-date {
-    left: 47vw;
-  }
-  .cvc {
-    top: 3vw;
-    left: 30vw;
-  }
-  .form-container {
-    width: 50%;
-  }
-}
