@@ -71,7 +71,7 @@ cardNumberInput.addEventListener("input", () => {
 cardNumberInput.addEventListener("keydown", (e) => {
   if (!/\d/.test(e.key) && e.key !== "Backspace") {
     e.preventDefault();
-  }
+  } 
 });
 
 //Handler for expiry date field
@@ -189,8 +189,11 @@ function checkExpiryDate() {
     dateError.classList.add("error");
     formValid = false;
   }
-  else if ((monthInput.length !== 2) || (yearInput.length !== 2)) {
-    dateError.textContent = "Please enter expiry date in the format mm/yy. E.g. 03/26"
+  else if ((monthInput.value.length !== 2) || (yearInput.value.length !== 2)) {
+    dateError.textContent = "Please enter expiry date in the format mm/yy. E.g. 03/26";
+    dateError.setAttribute("aria-hidden", true);
+    dateError.classList.add("error");
+    formValid = false;
   }
   else {
     dateError.textContent = "Error";
