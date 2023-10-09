@@ -1,7 +1,132 @@
 /* Media Queries */
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width: 560px) and (max-width: 768px) {
+  .purple-background { 
+    height: 14rem;
+  }
+  .cards {
+    max-width: 80%;
+  }
+  .card-front, 
+  .card-back {
+    height: 10rem; 
+    width: 24rem;
+  }
+  .card-back {
+    right:-8rem;
+  }
+  .logo,
+  .card-no,
+  .card-holder-details {
+    left: 3.8rem;
+  }
+  .card-holder-details p, 
+  .cvc {
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+  .logo {
+    height: 1.8rem;
+  }
+  .card-no {
+    top: 5.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+  .card-holder-details {
+    top: 8.5rem;
+  }
+  .expiry-date {
+    right: 5rem;
+  }
+  .cvc {
+    top: 4.5rem;
+    right: 8rem;
+  }
+
 }
-@media only screen and (min-width: 1024px) and (max-width: 1440px){
+
+@media only screen and (min-width: 768px) and (max-width: 1340px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content:space-between; 
+  }
+  .purple-background {
+    background: url("./images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15rem;
+    height: 100vh;
+    margin-bottom: 0;
+    display: grid;
+    place-content: center;
+  }
+  .cards {
+    max-width: none;
+    max-height: none;
+    height: 17rem;
+    width: 31rem;
+  }
+  .card-front,
+  .card-back {
+    height: 9.611rem;
+    width: 17.833rem;     
+  }
+  .card-front {
+    top: 0;
+    left: 10rem;
+  }
+  .card-back {
+    top: 11rem;
+    left: 12rem;
+  }
+  .logo {
+    height: 1.9rem;
+    top: 1rem;
+    left: 1rem;
+  }
+  .card-no {
+    top: 5rem;
+    left: 1rem;
+    font-size: 1.18rem;
+    letter-spacing: 3px;
+  }
+  .card-holder-details {
+    top: 1rem;
+    left: 1rem;
+  }
+  .card-holder-details p, 
+  .cvc {
+    font-size: .6rem;
+  }
+ .name, 
+ .expiry-date {
+  top: 7rem;
+ }
+  .name {
+    left: 0;
+  }
+  .expiry-date {
+    right: 0rem;
+  }
+  .cvc {
+    top: 4.3rem;
+    right: 3rem;
+  }
+  .form-container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    margin-left: 5rem;
+  }
+  .card-form {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1340px) and (max-width: 1440px){
   main {
     display: flex;
     flex-direction: row;
@@ -26,8 +151,10 @@
   }
   .card-front,
   .card-back {
+    max-height: 16.97vw;
+    max-width: 31.04vw; 
     height: 13.611rem;
-    width: 24.833rem;  
+    width: 24.833rem;   
     /* min-height: 12.5vw;
     min-width: 22.7vw; */ 
     /* height: 15vw;
@@ -37,11 +164,10 @@
     max-width: 33vw; */ 
 
     /* height: 24.833rem;
-    width: 13.611rem; */
+    width: 13.611rem;  */
     /* height: 10.8941rem;
     width: 19.8664rem; */
-    max-height: 16.97vw;
-    max-width: 31.04vw; 
+     
   }
   .card-front {
     top: 0;
@@ -90,8 +216,17 @@
     height: 100vh;
     justify-content: center;
     align-content: center;
-
   }
+  .complete-state {
+    width: 100%;
+  }
+  .complete-state img {
+    width: 3rem;
+  }
+  .complete-state h1 {
+    font-weight: 300;
+  }
+ 
   .card-form {
     width: 50%;
   }

@@ -51,7 +51,7 @@ main {
 .card-front {
   background-image: url("./images/bg-card-front.png");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:contain;
   /* position: absolute; 
   left: 3vw; 
   top: 26vw; */
@@ -62,7 +62,7 @@ main {
 .card-back {
   background: url("./images/bg-card-back.png");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:contain;
   /* position: absolute; */
   /* top: 5vw;
   left: 19vw; */
@@ -91,6 +91,7 @@ main {
   /* white-space: nowrap; */
   top: 4.2rem;
   left: 0.8rem;
+  max-width: 100%;
 }
 .name,
 .expiry-date {
@@ -195,13 +196,37 @@ input {
 .hidden {
   display: none !important;
 }
+.complete-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 2rem auto;
+}
+.complete-state img {
+  width: 5rem;
+  margin-bottom: 1rem;
+}
+.complete-state h1 {
+  color: var(--very-dark-violet);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+.complete-state p {
+  color: var(--dark-grayish-violet);
+  font-size: 0.8rem;
+}
+.continue-btn {
+  margin-top: 2rem;
+} 
 footer {
   color: var(--very-dark-violet);
   background-color: gray;
   padding: 15px 0;
   /*position: relative;
-  /* top: 90vw; */
-  
+  /* top: 90vw; */ 
 }
 .attribution p { 
   font-size: 11px; 
