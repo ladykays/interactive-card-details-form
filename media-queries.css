@@ -1,5 +1,7 @@
 /* Media Queries */
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 1440px){
   main {
     display: flex;
     flex-direction: row;
@@ -20,20 +22,34 @@
     max-width: none;
     max-height: none;
     height: 25rem;
-    width: 6rem;
+    width: 25rem;
   }
   .card-front,
   .card-back {
-    height: 13.6111rem;
-    width: 24.8333rem;
+    height: 13.611rem;
+    width: 24.833rem;  
+    /* min-height: 12.5vw;
+    min-width: 22.7vw; */ 
+    /* height: 15vw;
+    width: 27.5vw; */ 
+
+    /* max-height: 18vw;
+    max-width: 33vw; */ 
+
+    /* height: 24.833rem;
+    width: 13.611rem; */
+    /* height: 10.8941rem;
+    width: 19.8664rem; */
+    max-height: 16.97vw;
+    max-width: 31.04vw; 
   }
   .card-front {
     top: 0;
-    left: 0;
+    left: 8rem;
   }
   .card-back {
     top: 15rem;
-    left: 5rem;
+    left: 12rem;
   }
   .logo {
     height: 2.5rem;
@@ -74,7 +90,7 @@
     height: 100vh;
     justify-content: center;
     align-content: center;
-    
+
   }
   .card-form {
     width: 50%;
