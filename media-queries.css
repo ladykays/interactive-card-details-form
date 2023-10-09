@@ -1,25 +1,25 @@
 /* Media Queries */
 @media only screen and (min-width: 560px) and (max-width: 768px) {
-  .purple-background { 
+  .purple-background {
     height: 14rem;
   }
   .cards {
     max-width: 80%;
   }
-  .card-front, 
+  .card-front,
   .card-back {
-    height: 10rem; 
+    height: 10rem;
     width: 24rem;
   }
   .card-back {
-    right:-8rem;
+    right: -8rem;
   }
   .logo,
   .card-no,
   .card-holder-details {
     left: 3.8rem;
   }
-  .card-holder-details p, 
+  .card-holder-details p,
   .cvc {
     font-size: 0.7rem;
     font-weight: 300;
@@ -42,7 +42,6 @@
     top: 4.5rem;
     right: 8rem;
   }
-
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1340px) {
@@ -50,7 +49,7 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
-    justify-content:space-between; 
+    justify-content: space-between;
   }
   .purple-background {
     background: url("./images/bg-main-desktop.png");
@@ -71,7 +70,7 @@
   .card-front,
   .card-back {
     height: 9.611rem;
-    width: 17.833rem;     
+    width: 17.833rem;
   }
   .card-front {
     top: 0;
@@ -81,29 +80,31 @@
     top: 11rem;
     left: 12rem;
   }
+  .logo,
+  .card-no,
+  .card-holder-details {
+    left: 1rem;
+  }
   .logo {
     height: 1.9rem;
     top: 1rem;
-    left: 1rem;
   }
   .card-no {
     top: 5rem;
-    left: 1rem;
     font-size: 1.18rem;
     letter-spacing: 3px;
   }
   .card-holder-details {
     top: 1rem;
-    left: 1rem;
   }
-  .card-holder-details p, 
+  .card-holder-details p,
   .cvc {
-    font-size: .6rem;
+    font-size: 0.6rem;
   }
- .name, 
- .expiry-date {
-  top: 7rem;
- }
+  .name,
+  .expiry-date {
+    top: 7rem;
+  }
   .name {
     left: 0;
   }
@@ -135,12 +136,12 @@
     font-weight: 300;
   }
 }
-@media only screen and (min-width: 1340px) and (max-width: 2000px){
+@media only screen and (min-width: 1340px) and (max-width: 2000px) {
   main {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    justify-content:space-between; 
+    justify-content: space-between;
   }
   .purple-background {
     background: url("./images/bg-main-desktop.png");
@@ -161,22 +162,9 @@
   .card-front,
   .card-back {
     max-height: 16.97vw;
-    max-width: 31.04vw; 
+    max-width: 31.04vw;
     height: 13.611rem;
-    width: 24.833rem;   
-    /* min-height: 12.5vw;
-    min-width: 22.7vw; */ 
-    /* height: 15vw;
-    width: 27.5vw; */ 
-
-    /* max-height: 18vw;
-    max-width: 33vw; */ 
-
-    /* height: 24.833rem;
-    width: 13.611rem;  */
-    /* height: 10.8941rem;
-    width: 19.8664rem; */
-     
+    width: 24.833rem;
   }
   .card-front {
     top: 0;
@@ -186,29 +174,31 @@
     top: 15rem;
     left: 12rem;
   }
+  .logo,
+  .card-no,
+  .card-holder-details {
+    left: 1.5rem;
+  }
   .logo {
     height: 2.5rem;
     top: 1.5rem;
-    left: 1.5rem;
   }
   .card-no {
     top: 8rem;
-    left: 1.5rem;
     font-size: 1.5rem;
     letter-spacing: 4px;
   }
   .card-holder-details {
     top: 1.4rem;
-    left: 1.5rem;
   }
-  .card-holder-details p, 
+  .card-holder-details p,
   .cvc {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
- .name, 
- .expiry-date {
-  top: 10rem;
- }
+  .name,
+  .expiry-date {
+    top: 10rem;
+  }
   .name {
     left: 0;
   }
@@ -235,18 +225,18 @@
   .complete-state h1 {
     font-weight: 300;
   }
- 
+
   .card-form {
     width: 50%;
   }
 }
 
-@media only screen and (min-width: 2000px){
+@media only screen and (min-width: 2000px) {
   main {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    justify-content:space-between; 
+    justify-content: space-between;
   }
   .purple-background {
     background: url("./images/bg-main-desktop.png");
@@ -267,9 +257,9 @@
   .card-front,
   .card-back {
     max-height: 16.97vw;
-    max-width: 31.04vw; 
+    max-width: 31.04vw;
     height: 13.611rem;
-    width: 24.833rem;   
+    width: 24.833rem;
   }
   .card-front {
     top: 0;
@@ -279,29 +269,31 @@
     top: 15rem;
     left: 12rem;
   }
+  .logo,
+  .card-no,
+  .card-holder-details {
+    left: 1.5rem;
+  }
   .logo {
     height: 2.5rem;
     top: 1.5rem;
-    left: 1.5rem;
   }
   .card-no {
     top: 8rem;
-    left: 1.5rem;
     font-size: 1.5rem;
     letter-spacing: 4px;
   }
   .card-holder-details {
     top: 1.4rem;
-    left: 1.5rem;
   }
-  .card-holder-details p, 
+  .card-holder-details p,
   .cvc {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
- .name, 
- .expiry-date {
-  top: 10rem;
- }
+  .name,
+  .expiry-date {
+    top: 10rem;
+  }
   .name {
     left: 0;
   }
@@ -328,7 +320,7 @@
   .complete-state h1 {
     font-weight: 300;
   }
- 
+
   .card-form {
     width: 75%;
   }
