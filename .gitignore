@@ -4,8 +4,7 @@ before-code-cleanup.js
 
 # Ignore the following .md files
 style-guide.md
-README.md
-README-template.md
+INSTRUCTIONS.md
 
 # Ignore folder named design
 design/
