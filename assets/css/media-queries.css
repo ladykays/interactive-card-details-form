@@ -28,9 +28,9 @@
     height: 1.8rem;
   }
   .card-no {
-    top: 5.5rem;
     font-size: 1.2rem;
     letter-spacing: 3px;
+    top: 5.5rem;
   }
   .card-holder-details {
     top: 8.5rem;
@@ -39,8 +39,8 @@
     right: 5rem;
   }
   .cvc {
-    top: 4.5rem;
     right: 8rem;
+    top: 4.5rem;
   }
 }
 
@@ -52,19 +52,19 @@
     justify-content: space-between;
   }
   .purple-background {
-    background: url("./images/bg-main-desktop.png");
+    background: url("../images/bg-main-desktop.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 15rem;
+    display: grid;
     height: 100vh;
     margin-bottom: 0;
-    display: grid;
     place-content: center;
+    width: 15rem;
   }
   .cards {
+    height: 17rem;
     max-width: none;
     max-height: none;
-    height: 17rem;
     width: 31rem;
   }
   .card-front,
@@ -73,12 +73,12 @@
     width: 17.833rem;
   }
   .card-front {
-    top: 0;
     left: 10rem;
+    top: 0;
   }
   .card-back {
-    top: 11rem;
     left: 12rem;
+    top: 11rem;
   }
   .logo,
   .card-no,
@@ -90,9 +90,9 @@
     top: 1rem;
   }
   .card-no {
-    top: 5rem;
     font-size: 1.18rem;
     letter-spacing: 3px;
+    top: 5rem;
   }
   .card-holder-details {
     top: 1rem;
@@ -112,16 +112,16 @@
     right: 0rem;
   }
   .cvc {
-    top: 4.3rem;
     right: 3rem;
+    top: 4.3rem;
   }
   .form-container {
+    align-content: center;
     display: grid;
-    width: 100%;
     height: 100vh;
     justify-content: center;
-    align-content: center;
     margin-left: 5rem;
+    width: 100%;
   }
   .card-form {
     width: 70%;
@@ -144,19 +144,19 @@
     justify-content: space-between;
   }
   .purple-background {
-    background: url("./images/bg-main-desktop.png");
+    background: url("../images/bg-main-desktop.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 25rem;
-    height: 100vh;
-    margin-bottom: 0;
     display: grid;
+    height: 100vh;
+    margin-bottom: 0;  
     place-content: center;
+    width: 25rem;
   }
   .cards {
+    height: 25rem;
     max-width: none;
     max-height: none;
-    height: 25rem;
     width: 25rem;
   }
   .card-front,
@@ -239,7 +239,7 @@
     justify-content: space-between;
   }
   .purple-background {
-    background: url("./images/bg-main-desktop.png");
+    background: url("../images/bg-main-desktop.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 40vw;

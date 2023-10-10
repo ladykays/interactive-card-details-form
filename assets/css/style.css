@@ -43,7 +43,7 @@ input {
   width: 100%;
 }
 .purple-background {
-  background: url("./images/bg-main-mobile.png");
+  background: url("../images/bg-main-mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 12rem;
@@ -65,7 +65,7 @@ input {
   width: 14.736rem;
 }
 .card-front {
-  background-image: url("./images/bg-card-front.png");
+  background-image: url("../images/bg-card-front.png");
   background-repeat: no-repeat;
   background-size: contain;
   left: 0;
@@ -73,7 +73,7 @@ input {
   z-index: 1;
 }
 .card-back {
-  background: url("./images/bg-card-back.png");
+  background: url("../images/bg-card-back.png");
   background-repeat: no-repeat;
   background-size: contain;
   top: 1rem;
